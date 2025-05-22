@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VenceTech - Jack Vence Miyawa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">VenceTech</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-element" style="left: 10%; animation-delay: 0s;">💻</div>
+            <div class="floating-element" style="left: 20%; animation-delay: 5s;">🚀</div>
+            <div class="floating-element" style="left: 80%; animation-delay: 2s;">⭐</div>
+            <div class="floating-element" style="left: 70%; animation-delay: 7s;">🎯</div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Welcome to my digital world</p>
+            <h1>Jack Vence Miyawa</h1>
+            <p class="hero-description">Full-Stack Developer & Digital Innovator crafting exceptional web experiences with cutting-edge technologies</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-btn primary">
+                    <i class='bx bx-code-alt'></i>
+                    View My Work
+                </a>
+                <a href="#contact" class="cta-btn secondary">
+                    <i class='bx bx-message-dots'></i>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate developer with a love for creating impactful digital solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="profile-section">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Jack Vence Miyawa" class="profile-pic">
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" class="social-link" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Exp</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Awards</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Jack Vence Miyawa, a passionate full-stack developer based in Kenya. With over 3 years of experience in web development, I specialize in creating modern, responsive, and user-friendly applications that make a real impact.</p>
+                    
+                    <p>My journey in tech started with a curiosity about how websites work, and it has evolved into a deep passion for creating digital solutions that solve real-world problems. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends and best practices.</p>
+                    
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I'm always excited to take on new challenges and collaborate on innovative projects.</p>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-color);">What I Do</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class='bx bx-check' style="color: var(--primary-color);"></i>
+                                Full-Stack Web Development
+                            </li>
+                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class='bx bx-check' style="color: var(--primary-color);"></i>
+                                E-commerce Solutions
+                            </li>
+                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class='bx bx-check' style="color: var(--primary-color);"></i>
+                                Mobile-First Design
+                            </li>
+                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class='bx bx-check' style="color: var(--primary-color);"></i>
+                                API Development & Integration
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Technologies and tools I work with to bring ideas to life</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">HTML5 & CSS3</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">JavaScript (ES6+)</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">React.js</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Vue.js</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Tailwind CSS</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">MySQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">RESTful APIs</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level">Beginner</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">WordPress</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">SEO Optimization</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A showcase of my recent work and creative solutions</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class='bx bx-shopping-bag'></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">VenStore Kenya</h3>
+                        <p class="project-description">A comprehensive e-commerce platform built for the Kenyan market, featuring secure payment integration, inventory management, and mobile-first design.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">PayPal API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://venstore.co.ke" class="project-link primary" target="_blank">
+                                <i class='bx bx-link-external'></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class='bx bxl-github'></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">A modern, responsive portfolio website showcasing my work and skills. Features dark mode, smooth animations, and optimized performance.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">AOS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class='bx bx-link-external'></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class='bx bxl-github'></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class='bx bx-task'></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">A collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Socket.io</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class='bx bx-link-external'></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class='bx bxl-github'></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class='bx bx-restaurant'></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Restaurant Booking System</h3>
+                        <p class="project-description">A complete restaurant management system with online reservations, menu management, and customer feedback integration.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Vue.js</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class='bx bx-link-external'></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class='bx bxl-github'></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">How I can help bring your ideas to life</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">Custom web applications built with modern technologies, focusing on performance, security, and user experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-mobile-alt'></i>
+                    </div>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">Mobile-first designs that work seamlessly across all devices and screen sizes, ensuring optimal user experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-shopping-bag'></i>
+                    </div>
+                    <h3 class="service-title">E-commerce Solutions</h3>
+                    <p class="service-description">Complete online stores with payment integration, inventory management, and customer management systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-server'></i>
+                    </div>
+                    <h3 class="service-title">API Development</h3>
+                    <p class="service-description">RESTful APIs and backend services that power your applications with scalable and secure architecture.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-search-alt'></i>
+                    </div>
+                    <h3 class="service-title">SEO Optimization</h3>
+                    <p class="service-description">Search engine optimization to improve your website's visibility and ranking in search results.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-support'></i>
+                    </div>
+                    <h3 class="service-title">Maintenance & Support</h3>
+                    <p class="service-description">Ongoing maintenance, updates, and technical support to keep your applications running smoothly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle">Testimonials from satisfied clients and collaborators</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jack delivered an outstanding e-commerce platform for our business. His attention to detail and technical expertise exceeded our expectations. The site is fast, secure, and user-friendly.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Jack Vence Miyawa</h4>
+                            <p>CEO, Venstore Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Working with Jack was a pleasure. He understood our requirements perfectly and delivered a solution that transformed our business operations. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kipchoge</h4>
+                            <p>Manager, Tech Solutions Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jack's portfolio website design is simply amazing. The modern design, smooth animations, and responsive layout make it stand out from the competition.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MO</div>
+                        <div class="author-info">
+                            <h4>Mary Ochieng</h4>
+                            <p>Creative Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss your next project and bring your ideas to life</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem; color: var(--primary-color);">Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>jackvence@venstore.co.ke</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class='bx bx-phone'></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+254 737 766 336</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class='bx bx-map'></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class='bx bx-time'></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 2rem; color: var(--primary-color);">Send a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class='bx bx-send'></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="/blog">Blog</a>
+                <a href="/resume">Resume</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VenceTech - Jack Vence Miyawa. All rights reserved.</p>
+                <p>Built with ❤️ using modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
