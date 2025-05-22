@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>VenceTech</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">My Portfolio</div>
+            <div class="logo">VenceTech</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -26,10 +27,10 @@
         </div>
     </header>
     <main>
-        <section id="about">
+        <section id="about" data-aos="fade-up">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="images/bg1.jpg" alt="Jack Vence Miyawa" class="profile-pic">
+                <img src="images/neon vence.jpg" alt="Jack Vence Miyawa" class="profile-pic">
                 <div>
                     <p>Hello! I'm Jack Vence Miyawa, a passionate developer with experience in web and software development. I love creating impactful solutions and learning new technologies.</p>
                     <h3>Skills</h3>
@@ -43,18 +44,18 @@
                 </div>
             </div>
         </section>
-        <section id="projects">
+        <section id="projects" data-aos="fade-up" data-aos-delay="100">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <img src="images/bg1.jpg" alt="Project 1" class="project-img">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/marvel.jpg" alt="Project 1" class="project-img">
                     <h3>Portfolio Website</h3>
                     <p>A modern, responsive portfolio website built with HTML, CSS, and JavaScript.</p>
                     <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                     <a href="#" target="_blank">Demo</a> | <a href="#" target="_blank">GitHub</a>
                 </div>
-                <div class="project-card">
-                    <img src="images/project2.jpg" alt="Project 2" class="project-img">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/bg1.jpg" alt="Project 2" class="project-img">
                     <h3>Venstore Kenya</h3>
                     <p>A website for a online store. Live at <a href="https://venstore.co.ke">venstore.co.ke</a></p>
                     <div class="project-tags"><span>Shopping Cart</span><span>Buy and Sell</span><span>MySQL</span></div>
@@ -62,7 +63,7 @@
                 </div>
             </div>
         </section>
-        <section id="testimonials">
+        <section id="testimonials" data-aos="fade-up" data-aos-delay="200">
             <h2>Achievements</h2>
             <div class="achievements">
                 <div class="achievement-card">
@@ -75,7 +76,7 @@
                 </div>
             </div>
         </section>
-        <section id="contact">
+        <section id="contact" data-aos="fade-up" data-aos-delay="300">
             <h2>Contact</h2>
             <div class="contact-info">
                 <p>Email: <a href="mailto:jackvence@example.com">jackvence@example.com</a></p>
@@ -95,8 +96,10 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Jack Vence Miyawa. All rights reserved.</p>
+        <p>&copy; 2025 VenceTech. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html> 
