@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+        <div class="hero">
+            <h1>Hello, I'm Jack Vence Miyawa</h1>
+            <p>Welcome to my portfolio website. I'm a developer passionate about building impactful projects.</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/bg1.jpg" alt="Jack Vence Miyawa" class="profile-pic">
+                <div>
+                    <p>Hello! I'm Jack Vence Miyawa, a passionate developer with experience in web and software development. I love creating impactful solutions and learning new technologies.</p>
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li><span>HTML</span><div class="skill-bar"><div class="skill-level" style="width:90%"></div></div></li>
+                        <li><span>CSS</span><div class="skill-bar"><div class="skill-level" style="width:85%"></div></div></li>
+                        <li><span>JavaScript</span><div class="skill-bar"><div class="skill-level" style="width:80%"></div></div></li>
+                        <li><span>PHP</span><div class="skill-bar"><div class="skill-level" style="width:75%"></div></div></li>
+                        <li><span>React</span><div class="skill-bar"><div class="skill-level" style="width:70%"></div></div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/bg1.jpg" alt="Project 1" class="project-img">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern, responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                    <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    <a href="#" target="_blank">Demo</a> | <a href="#" target="_blank">GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Project 2" class="project-img">
+                    <h3>Venstore Kenya</h3>
+                    <p>A website for a online store. Live at <a href="https://venstore.co.ke">venstore.co.ke</a></p>
+                    <div class="project-tags"><span>Shopping Cart</span><span>Buy and Sell</span><span>MySQL</span></div>
+                    <a href="#" target="_blank">Demo</a> | <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials">
+            <h2>Achievements</h2>
+            <div class="achievements">
+                <div class="achievement-card">
+                    <h3>Certified Web Developer</h3>
+                    <p>Completed a professional web development certification in 2023.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Hackathon Winner</h3>
+                    <p>Won 1st place at the 2022 City Hackathon for an innovative app.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:jackvence@example.com">jackvence@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+2547 377 663 36</a></p>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Jack Vence Miyawa. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
