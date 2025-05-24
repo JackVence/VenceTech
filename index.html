@@ -6,7 +6,7 @@
     <title>VenceTech - Jack Vence Miyawa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=<?php echo filemtime('styles.css'); ?>">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -66,7 +66,7 @@
             <div class="about-content">
                 <img src="images/neon vence.jpg" alt="Jack Vence Miyawa" class="profile-pic">
                 <div>
-                    <p>Hello! I'm Jack Vence Miyawa, a passionate developer specializing in online affiliate and ecommerce websites. I have hands-on experience with Daraja API (STK Push) and Tinypesa integrations. Besides coding, I'm a piano player and currently a Mathematics and Chemistry education student at Maseno University. I love building impactful solutions and learning new technologies.</p>
+                    <p>Hello! I'm Jack Vence Miyawa, a passionate developer specializing in online affiliate and ecommerce websites. I have hands-on experience with Daraja API (STK Push) and Tinypesa integrations. Besides coding, I'm a piano player and an active crypto trader. I love building impactful solutions and learning new technologies.</p>
                     <h3>Skills</h3>
                     <ul class="skills-list">
                         <li><span>HTML</span><div class="skill-bar"><div class="skill-level" style="width:95%"></div></div></li>
@@ -79,7 +79,7 @@
                     </ul>
                     <div class="fun-facts">
                         <p><strong>Fun Fact:</strong> I play the piano and am passionate about music!</p>
-                        <p><strong>Education:</strong> Mathematics & Chemistry Education student at Maseno University.</p>
+                        <p><strong>Fun Fact:</strong> I'm an active crypto trader and love analyzing market trends!</p>
                     </div>
                 </div>
             </div>
@@ -175,6 +175,7 @@
             <div class="section-header">
                 <h2 class="section-title">Projects</h2>
                 <p class="section-subtitle">Some of my projects</p>
+                <button class="btn-primary" id="showAllProjects" onclick="showAllProjects()">View All Projects</button>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
@@ -191,7 +192,7 @@
                             <span class="project-tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://viewsnetcredits.com" class="project-link primary" target="_blank">
+                            <a href="https://viewsnetcredit.com" class="project-link primary" target="_blank">
                                 <i class='bx bx-link-external'></i>
                                 Live Website
                             </a>
@@ -302,6 +303,31 @@
                         </div>
                     </div>
                 </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/crypto-trading.jpg" alt="Crypto Trading Resources" class="project-img">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Crypto Trading Resources</h3>
+                    <p class="project-description">Comprehensive collection of cryptocurrency trading resources including educational videos, PDF guides, and market analysis tools.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Cryptocurrency</span>
+                        <span class="project-tag">Trading</span>
+                        <span class="project-tag">Education</span>
+                        <span class="project-tag">Resources</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class='bx bx-video'></i>
+                            Video Tutorials
+                        </a>
+                        <a href="#" class="project-link secondary">
+                            <i class='bx bx-file-pdf'></i>
+                            PDF Guides
+                        </a>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
@@ -353,6 +379,13 @@
                     </div>
                     <h3 class="service-title">Maintenance & Support</h3>
                     <p class="service-description">Ongoing maintenance, updates, and technical support to keep your applications running smoothly.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx  bx-bitcoin'  ></i>
+                    </div>
+                    <h3 class="service-title">Crypto Trading</h3>
+                    <p class="service-description">Crypto trading resources and tools to help you analyze market trends and make informed trading decisions.</p>
                 </div>
             </div>
         </section>
