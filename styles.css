@@ -416,6 +416,14 @@ section {
     margin-top: 2rem;
 }
 
+.projects-grid #showAllProjects {
+    background: var(--gradient-primary);
+    color: rgb(49, 167, 131);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
 .project-card {
     background: var(--bg-secondary);
     border-radius: 16px;
