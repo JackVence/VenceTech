@@ -417,11 +417,22 @@ section {
 }
 
 #projects .view-all-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
     background: var(--gradient-primary);
-    color: rgb(255, 255, 255);
-    border: none;
+    color: white;
     border-radius: 8px;
-    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+#projects .view-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--gradient-secondary);
 }
 
 .project-card {
@@ -539,6 +550,25 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+}
+
+#services .view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+#services .view-all-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .service-card {
