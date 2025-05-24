@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - VenceTech | Jack Vence Miyawa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Enhanced styles for upgraded projects page */
+        :root {
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projects-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 10rem 0 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .projects-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .projects-hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .projects-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .projects-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .filter-btn.active::before,
+        .filter-btn:hover::before {
+            left: 0;
+        }
+
+        .project-section {
+            margin-bottom: 6rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-card-enhanced {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card-enhanced:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-header-enhanced {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .project-img-enhanced {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card-enhanced:hover .project-img-enhanced {
+            transform: scale(1.1);
+        }
+
+        .project-overlay-enhanced {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .project-card-enhanced:hover .project-overlay-enhanced {
+            opacity: 1;
+        }
+
+        .overlay-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-actions-enhanced {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-action-btn-enhanced {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-action-btn-enhanced:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-body-enhanced {
+            padding: 2.5rem;
+        }
+
+        .project-meta-enhanced {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-category-enhanced {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-date-enhanced {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-title-enhanced {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .project-description-enhanced {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .project-features-enhanced {
+            margin-bottom: 2rem;
+        }
+
+        .features-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .earnings-methods {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .earnings-methods h4 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .earnings-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .earning-method {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .earning-method:hover {
+            transform: translateX(5px);
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .earning-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .tech-stack-enhanced {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag-enhanced {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .tech-tag-enhanced:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-links-enhanced {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link-enhanced {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .project-link-enhanced.primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .project-link-enhanced.secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 2px solid var(--text-secondary);
+        }
+
+        .project-link-enhanced:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .multiple-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sub-project {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: var(--transition);
+        }
+
+        .sub-project:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .sub-project h4 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .sub-project p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sub-project-link:hover {
+            transform: translateX(5px);
+        }
+
+        .back-to-home {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            z-index: 1000;
+        }
+
+        .back-to-home:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @media (max-width: 768px) {
+            .projects-hero {
+                padding: 8rem 0 4rem;
+            }
+
+            .projects-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .multiple-projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project-body-enhanced {
+                padding: 2rem;
+            }
+
+            .project-actions-enhanced {
+                flex-direction: column;
+            }
+
+            .earnings-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">VenceTech</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+
+    <!-- Enhanced Projects Hero Section -->
+    <section class="projects-hero">
+        <div class="projects-hero-content">
+            <h1>Portfolio Showcase</h1>
+            <p>Discover my comprehensive range of web development projects, innovative API integrations, and creative digital solutions that drive real business results</p>
+            <div class="projects-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Technologies Mastered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Active Platforms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Enhanced Projects Filter -->
+        <section class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="affiliate">Affiliate Platforms</button>
+            <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn" data-filter="api">API Integration</button>
+            <button class="filter-btn" data-filter="creative">Creative Projects</button>
+        </section>
+
+        <div class="projects-container">
+            <!-- Affiliate Marketing Platforms Section -->
+            <div class="project-section" data-category="affiliate">
+                <div class="section-header">
+                    <h2 class="section-title">Affiliate Marketing Platforms</h2>
+                    <p class="section-subtitle">Comprehensive earning platforms where users generate income through multiple revenue streams including blogging, trivia, referrals, and engagement activities</p>
+                </div>
+
+                <div class="project-card-enhanced animate-on-scroll">
+                    <div class="project-header-enhanced">
+                        <img src="images/affiliate.jpg" alt="Affiliate Website Network" class="project-img-enhanced">
+                        <div class="project-overlay-enhanced">
+                            <h3 class="overlay-title">Multi-Platform Affiliate Network</h3>
+                            <div class="project-actions-enhanced">
+                                <a href="https://viewsnetcredit.com" target="_blank" class="project-action-btn-enhanced">
+                                    <i class='bx bx-link-external'></i>
+                                    Primary Platform
+                                </a>
+                                <a href="#" class="project-action-btn-enhanced">
+                                    <i class='bx bxl-github'></i>
+                                    Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body-enhanced">
+                        <div class="project-meta-enhanced">
+                            <span class="project-category-enhanced">Affiliate Marketing</span>
+                            <span class="project-date-enhanced">2024 - Ongoing</span>
+                        </div>
+                        <h3 class="project-title-enhanced">Advanced Affiliate Marketing Ecosystem</h3>
+                        <p class="project-description-enhanced">
+                            A sophisticated network of affiliate marketing platforms designed to maximize user engagement and revenue generation. These platforms offer multiple earning opportunities through diverse monetization strategies, advanced analytics, and seamless user experience optimization.
+                        </p>
+
+                        <div class="earnings-methods">
+                            <h4><i class='bx bx-money'></i> Revenue Generation Methods</h4>
+                            <div class="earnings-list">
+                                <div class="earning-method">
+                                    <div class="earning-icon"><i class='bx bx-edit'></i></div>
+                                    <div>
+                                        <strong>Content Creation</strong>
+                                        <p>Users earn through blog posts, articles, and content engagement</p>
+                                    </div>
+                                </div>
+                                <div class="earning-method">
+                                    <div class="earning-icon"><i class='bx bx-brain'></i></div>
+                                    <div>
+                                        <strong>Trivia & Quizzes</strong>
+                                        <p>Interactive quiz system with reward mechanisms</p>
+                                    </div>
+                                </div>
+                                <div class="earning-method">
+                                    <div class="earning-icon"><i class='bx bx-group'></i></div>
+                                    <div>
+                                        <strong>Referral Program</strong>
+                                        <p>Multi-level referral system with performance bonuses</p>
+                                    </div>
+                                </div>
+                                <div class="earning-method">
+                                    <div class="earning-icon"><i class='bx bx-task'></i></div>
+                                    <div>
+                                        <strong>Task Completion</strong>
+                                        <p>Daily challenges and engagement-based rewards</p>
+                                    </div>
+                                </div>
+                                <div class="earning-method">
+                                    <div class="earning-icon"><i class='bx bx-video'></i></div>
+                                    <div>
+                                        <strong>Video Engagement</strong>
+                                        <p>Video watching and interaction rewards</p>
+                                    </div>
+                                </div>
+                                <div class="earning-method">
+                                    <div class="earning-icon"><i class='bx bx-share'></i></div>
+                                    <div>
+                                        <strong>Social Sharing</strong>
+                                        <p>Social media promotion and viral marketing rewards</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-features-enhanced">
+                            <h4 class="features-title">Platform Features & Capabilities</h4>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Real-time Analytics Dashboard</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Advanced User Management System</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Multi-tier Commission Structure</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Automated Payment Processing</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Content Management System</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Social Media Integration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>Mobile-Responsive Design</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">✓</div>
+                                    <span>SEO Optimization Framework</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack-enhanced">
+                            <span class="tech-tag-enhanced">PHP 8.0+</span>
+                            <span class="tech-tag-enhanced">MySQL</span>
+                            <span class="tech-tag-enhanced">JavaScript ES6+</span>
+                            <span class="tech-tag-enhanced">AJAX</span>
+                            <span class="tech-tag-enhanced">Bootstrap 5</span>
+                            <span class="tech-tag-enhanced">Chart.js</span>
+                            <span class="tech-tag-enhanced">Payment APIs</span>
+                            <span class="tech-tag-enhanced">REST APIs</span>
+                        </div>
+
+                        <div class="multiple-projects">
+                            <div class="sub-project">
+                                <h4>ViewsNetCredit Platform</h4>
+                                <p>Primary affiliate platform featuring comprehensive earning mechanisms, user dashboards, and advanced analytics. Focuses on content creation and referral-based income generation.</p>
+                                <a href="https://viewsnetcredit.com" target="_blank" class="sub-project-link">
+                                    <i class='bx bx-link-external'></i>
+                                    Explore Platform
+                                </a>
+                            </div>
+                            <div class="sub-project">
+                                <h4>Secondary Affiliate Network</h4>
+                                <p>Specialized platform emphasizing trivia quizzes and interactive content. Features gamification elements and social sharing rewards to boost user engagement.</p>
+                                <a href="#" class="sub-project-link">
+                                    <i class='bx bx-link-external'></i>
+                                    Coming Soon
+                                </a>
+                            </div>
+                            <div class="sub-project">
+                                <h4>Niche Marketing Platform</h4>
+                                <p>Targeted affiliate platform for specific market segments with customized earning opportunities and specialized content management tools.</p>
+                                <a href="#" class="sub-project-link">
+                                    <i class='bx bx-link-external'></i>
+                                    In Development
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-links-enhanced">
+                            <a href="https://viewsnetcredit.com" target="_blank" class="project-link-enhanced primary">
+                                <i class='bx bx-link-external'></i>
+                                Visit Primary Platform
+                            </a>
+                            <a href="#" class="project-link-enhanced secondary">
+                                <i class='bx bxl-github'></i>
+                                View Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-commerce Platforms Section -->
+            <div class="project-section" data-category="ecommerce">
+                <div class="section-header">
+                    <h2 class="section-title">E-commerce Solutions</h2>
+                    <p class="section-subtitle">Full-stack e-commerce platforms with advanced features, payment integration, and comprehensive management systems</p>
+                </div>
+
+                <div class="project-card-enhanced animate-on-scroll">
+                    <div class="project-header-enhanced">
+                        <img src="images/ecommerce.jpg" alt="VenStore E-commerce Platform" class="project-img-enhanced">
+                        <div class="project-overlay-enhanced">
+                            <h3 class="overlay-title">Venstore Kenya E-commerce Platform</h3>
+                            <div class="project-actions-enhanced">
+                                <a href="https://venstore.co.ke" target="_blank" class="project-action-btn-enhanced">
+                                    <i class='bx bx-store'></i>
+                                    Visit Store
+                                </a><a href="https://venstore.co.ke" target="_blank" class="project-action-btn-enhanced">
+                                    <i class='bx bx-store'></i>
+                                    Visit Store
+                                </a>
+                                <a href="#" class="project-action-btn-enhanced">
+                                    <i class='bx bxl-github'></i>
+                                    Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body-enhanced">
+                        <div class="project-meta-enhanced">
+                            <span class="project-category-enhanced">E-commerce</span>
+                            <span class="project-date-enhanced">2024 - Active</span>
+                        </div>
+                        <h3 class="project-title-enhanced">Venstore Kenya - Modern E-commerce Platform</h3>
+                        <p class="project-description-enhanced">
+                            A comprehensive e-commerce solution built from scratch with modern web technologies. Features advanced product management, secure payment processing, inventory tracking, and comprehensive analytics dashboard for business intelligence.
+                        </p>
+
+                        <div class="project-features-enhanced">
+                            <h4 class="features-title">Core E-commerce Features</h4>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🛒</div>
+                                    <span>Advanced Shopping Cart System</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">💳</div>
+                                    <span>Multiple Payment Gateway Integration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📦</div>
+                                    <span>Real-time Inventory Management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📊</div>
+                                    <span>Sales Analytics & Reporting</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">👥</div>
+                                    <span>Customer Management System</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🔍</div>
+                                    <span>Advanced Product Search & Filtering</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📱</div>
+                                    <span>Mobile-First Responsive Design</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🔐</div>
+                                    <span>Secure User Authentication</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack-enhanced">
+                            <span class="tech-tag-enhanced">Laravel 10</span>
+                            <span class="tech-tag-enhanced">MySQL</span>
+                            <span class="tech-tag-enhanced">Vue.js</span>
+                            <span class="tech-tag-enhanced">Stripe API</span>
+                            <span class="tech-tag-enhanced">PayPal SDK</span>
+                            <span class="tech-tag-enhanced">Tailwind CSS</span>
+                            <span class="tech-tag-enhanced">Redis</span>
+                            <span class="tech-tag-enhanced">Docker</span>
+                        </div>
+
+                        <div class="project-links-enhanced">
+                            <a href="https://venstore.co.ke" target="_blank" class="project-link-enhanced primary">
+                                <i class='bx bx-store'></i>
+                                Visit Store
+                            </a>
+                            <a href="#" class="project-link-enhanced secondary">
+                                <i class='bx bxl-github'></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Integration Projects Section -->
+            <div class="project-section" data-category="api">
+                <div class="section-header">
+                    <h2 class="section-title">API Integration Solutions</h2>
+                    <p class="section-subtitle">Advanced API integrations and custom backend solutions for seamless data exchange and third-party service connections</p>
+                </div>
+
+                <div class="project-grid">
+                    <div class="project-card-enhanced animate-on-scroll">
+                        <div class="project-header-enhanced">
+                            <img src="images/daraja-mpesa.png" alt="API Integration Dashboard" class="project-img-enhanced">
+                            <div class="project-overlay-enhanced">
+                                <h3 class="overlay-title">Safaricom Daraja API Integration</h3>
+                                <div class="project-actions-enhanced">
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bx-link-external'></i>
+                                        Live Demo
+                                    </a>
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bxl-github'></i>
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body-enhanced">
+                            <div class="project-meta-enhanced">
+                                <span class="project-category-enhanced">API Integration</span>
+                                <span class="project-date-enhanced">2023</span>
+                            </div>
+                            <h3 class="project-title-enhanced">M-Pesa Payment Integration</h3>
+                            <p class="project-description-enhanced">
+                                Comprehensive API integration platform connecting multiple payment processors, social media platforms, and third-party services. Features real-time data synchronization and automated workflow management.
+                            </p>
+
+                            <div class="project-features-enhanced">
+                                <h4 class="features-title">Integrated APIs</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">💳</div>
+                                        <span>Stripe & PayPal Integration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📱</div>
+                                        <span>M-Pesa Mobile Money API</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📧</div>
+                                        <span>SendGrid Email Service</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">☁️</div>
+                                        <span>AWS S3 Storage Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-enhanced">
+                                <span class="tech-tag-enhanced">Node.js</span>
+                                <span class="tech-tag-enhanced">Express.js</span>
+                                <span class="tech-tag-enhanced">MongoDB</span>
+                                <span class="tech-tag-enhanced">REST APIs</span>
+                                <span class="tech-tag-enhanced">WebHooks</span>
+                                <span class="tech-tag-enhanced">OAuth 2.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card-enhanced animate-on-scroll">
+                        <div class="project-header-enhanced">
+                            <img src="images/tinypesa-mpesa.png" alt="Weather Dashboard API" class="project-img-enhanced">
+                            <div class="project-overlay-enhanced">
+                                <h3 class="overlay-title">Tinypesa API Integration</h3>
+                                <div class="project-actions-enhanced">
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bx-link-external'></i>
+                                        Live Demo
+                                    </a>
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bxl-github'></i>
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body-enhanced">
+                            <div class="project-meta-enhanced">
+                                <span class="project-category-enhanced">API Integration</span>
+                                <span class="project-date-enhanced">2024</span>
+                            </div>
+                            <h3 class="project-title-enhanced">Tinypesa API Integration</h3>
+                            <p class="project-description-enhanced">
+                                 Seamless integration of Tinypesa API for efficient and secure payment processing. Features real-time transaction monitoring and automated payment workflows.
+                            </p>
+
+                            <div class="project-features-enhanced">
+                                <h4 class="features-title">Key Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">💳</div>
+                                        <span>M-Pesa Payment Integration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📈</div>
+                                        <span>Real-time Transaction Monitoring</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🗺️</div>
+                                        <span>Seamless Payment Processing</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">⚡</div>
+                                        <span>Automated Payment Workflows</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-enhanced">
+                                <span class="tech-tag-enhanced">Node.js</span>
+                                <span class="tech-tag-enhanced">Express.js</span>
+                                <span class="tech-tag-enhanced">MongoDB</span>
+                                <span class="tech-tag-enhanced">REST APIs</span>
+                                <span class="tech-tag-enhanced">WebHooks</span>
+                                <span class="tech-tag-enhanced">OAuth 2.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creative Projects Section -->
+            <div class="project-section" data-category="creative">
+                <div class="section-header">
+                    <h2 class="section-title">Creative & Interactive Projects</h2>
+                    <p class="section-subtitle">Innovative web experiences combining creativity with cutting-edge technology to deliver engaging user interactions</p>
+                </div>
+
+                <div class="project-grid">
+                    <div class="project-card-enhanced animate-on-scroll">
+                        <div class="project-header-enhanced">
+                            <img src="images/Portfolio-Desk.jpg" alt="Interactive Portfolio" class="project-img-enhanced">
+                            <div class="project-overlay-enhanced">
+                                <h3 class="overlay-title">3D Interactive Portfolio</h3>
+                                <div class="project-actions-enhanced">
+                                    <a href="index.html" class="project-action-btn-enhanced">
+                                        <i class='bx bx-link-external'></i>
+                                        Experience
+                                    </a>
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bxl-github'></i>
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body-enhanced">
+                            <div class="project-meta-enhanced">
+                                <span class="project-category-enhanced">Creative</span>
+                                <span class="project-date-enhanced">2024</span>
+                            </div>
+                            <h3 class="project-title-enhanced">Immersive Personal Portfolio</h3>
+                            <p class="project-description-enhanced">
+                                An interactive 3D portfolio website featuring advanced animations, particle systems, and immersive user experiences. Built with modern web technologies and optimized for performance across all devices.
+                            </p>
+
+                            <div class="project-features-enhanced">
+                                <h4 class="features-title">Creative Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🎨</div>
+                                        <span>3D Animations & Transitions</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">✨</div>
+                                        <span>Interactive Particle Systems</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🎭</div>
+                                        <span>Dynamic Theme Switching</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📱</div>
+                                        <span>Progressive Web App Features</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-enhanced">
+                                <span class="tech-tag-enhanced">Three.js</span>
+                                <span class="tech-tag-enhanced">GSAP</span>
+                                <span class="tech-tag-enhanced">CSS3 Animations</span>
+                                <span class="tech-tag-enhanced">WebGL</span>
+                                <span class="tech-tag-enhanced">Service Workers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="project-card-enhanced animate-on-scroll">
+                        <div class="project-header-enhanced">
+                            <img src="images/game-project.jpg" alt="Web-based Game" class="project-img-enhanced">
+                            <div class="project-overlay-enhanced">
+                                <h3 class="overlay-title">Interactive Web Game</h3>
+                                <div class="project-actions-enhanced">
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bx-game'></i>
+                                        Play Game
+                                    </a>
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bxl-github'></i>
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body-enhanced">
+                            <div class="project-meta-enhanced">
+                                <span class="project-category-enhanced">Creative</span>
+                                <span class="project-date-enhanced">2024</span>
+                            </div>
+                            <h3 class="project-title-enhanced">Multiplayer Trivia Game</h3>
+                            <p class="project-description-enhanced">
+                                Real-time multiplayer trivia game with socket-based communication, dynamic scoring system, and interactive gameplay. Features multiple game modes and comprehensive leaderboard systems.
+                            </p>
+
+                            <div class="project-features-enhanced">
+                                <h4 class="features-title">Game Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🎮</div>
+                                        <span>Real-time Multiplayer Gaming</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🏆</div>
+                                        <span>Dynamic Scoring & Leaderboards</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">💬</div>
+                                        <span>Live Chat Integration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🎯</div>
+                                        <span>Multiple Game Modes</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-enhanced">
+                                <span class="tech-tag-enhanced">Socket.io</span>
+                                <span class="tech-tag-enhanced">Node.js</span>
+                                <span class="tech-tag-enhanced">Canvas API</span>
+                                <span class="tech-tag-enhanced">Express.js</span>
+                                <span class="tech-tag-enhanced">Real-time DB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card-enhanced animate-on-scroll">
+                        <div class="project-header-enhanced">
+                            <img src="images/data-viz.jpg" alt="Data Visualization Platform" class="project-img-enhanced">
+                            <div class="project-overlay-enhanced">
+                                <h3 class="overlay-title">Data Visualization Suite</h3>
+                                <div class="project-actions-enhanced">
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bx-chart'></i>
+                                        View Dashboard
+                                    </a>
+                                    <a href="#" class="project-action-btn-enhanced">
+                                        <i class='bx bxl-github'></i>
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body-enhanced">
+                            <div class="project-meta-enhanced">
+                                <span class="project-category-enhanced">Creative</span>
+                                <span class="project-date-enhanced">2024</span>
+                            </div>
+                            <h3 class="project-title-enhanced">Interactive Data Visualization Platform</h3>
+                            <p class="project-description-enhanced">
+                                Advanced data visualization platform featuring interactive charts, real-time data processing, and customizable dashboard components. Designed for business intelligence and analytics presentation.
+                            </p>
+
+                            <div class="project-features-enhanced">
+                                <h4 class="features-title">Visualization Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📊</div>
+                                        <span>Interactive Chart Components</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🎨</div>
+                                        <span>Customizable Dashboards</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">⚡</div>
+                                        <span>Real-time Data Updates</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📤</div>
+                                        <span>Export & Sharing Options</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-enhanced">
+                                <span class="tech-tag-enhanced">D3.js</span>
+                                <span class="tech-tag-enhanced">Chart.js</span>
+                                <span class="tech-tag-enhanced">React.js</span>
+                                <span class="tech-tag-enhanced">WebSockets</span>
+                                <span class="tech-tag-enhanced">CSV/JSON APIs</span>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Home Button -->
+    <button class="back-to-home" onclick="window.location.href='index.html'" title="Back to Home">
+        <i class='bx bx-home'></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="/blog">Blog</a>
+                <a href="/resume">Resume</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VenceTech - Jack Vence Miyawa. All rights reserved.</p>
+                <p>Built with ❤️ using modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced projects page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectSections = document.querySelectorAll('.project-section');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Show/hide sections
+                    projectSections.forEach(section => {
+                        if (filter === 'all' || section.getAttribute('data-category') === filter) {
+                            section.style.display = 'block';
+                            section.style.animation = 'fadeInUp 0.6s ease forwards';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Animate on scroll
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(el => observer.observe(el));
+
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Loading screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
